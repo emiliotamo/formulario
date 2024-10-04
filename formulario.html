@@ -1,10 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>formulario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .contenedor {
+            width: 800px;
+            margin: 20px auto;
+            border: 1px solid #000;
+        }
+
+        .seccion {
+            border: 1px solid #aaa;
+            margin-bottom: 20px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .titulo {
+            position: absolute;
+            top: -14px;
+            left: 10px;
+            background: #fff;
+            padding: 0 5px;
+            font-weight: bold;
+        }
+
+        /* Estilos específicos para cada sección */
+        .datos-personales {
+            background-color: #94899C;
+        }
+
+        .forma-acceso {
+            background-color: #758CA8;
+        }
+
+        .documentos-adjuntados {
+            background-color: #607E66;
+        }
+
+        .campo {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .campo input[type="text"],
+        .campo select {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .grupo-opciones label {
+            display: inline;
+        }
+
+        /* Ajuste de las opciones de radio y checkbox */
+        .opciones-radio,
+        .opciones-checkbox {
+            margin-left: 15px;
+        }
+
+        .opciones-radio input[type="radio"],
+        .opciones-checkbox input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="contenedor">
+        <!-- Sección de Datos Personales -->
+        <div class="seccion datos-personales">
+            <span class="titulo">Datos Personales</span>
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre">
+            </div>
+            <div class="campo">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos">
+            </div>
+            <div class="campo">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni">
+            </div>
+            <div class="campo">
+                <label for="lugar-nacimiento">Lugar de Nacimiento:</label>
+                <input type="text" id="lugar-nacimiento">
+            </div>
+            <div class="campo">
+                <label for="provincia">Provincia:</label>
+                <select id="provincia">
+                    <option value="Cáceres">Cáceres</option>
+                    <!-- Más opciones se pueden agregar aquí -->
+                </select>
+            </div>
+            <div class="campo">
+                <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                <input type="text" id="fecha-nacimiento" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="campo">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion">
+            </div>
+            <div class="campo">
+                <label for="codigo-postal">Código Postal:</label>
+                <input type="text" id="codigo-postal">
+            </div>
+        </div>
+
+        <!-- Sección de Forma de Acceso -->
+        <div class="seccion forma-acceso">
+            <span class="titulo">Forma de Acceso</span>
+            <div class="campo">
+                <label>Directo:</label>
+                <div class="opciones-radio">
+                    <input type="radio" id="directo-bachillerato" name="acceso" value="Bachillerato">
+                    <label for="directo-bachillerato">Bachillerato</label>
+                    <input type="text"><br>
+
+                    <input type="radio" id="directo-universidad" name="acceso" value="Universidad">
+                    <label for="directo-universidad">Universidad</label>
+                    <input type="text"><br>
+
+                    <input type="radio" id="directo-grado-medio" name="acceso" value="Grado Medio">
+                    <label for="directo-grado-medio">Grado Medio</label>
+                    <input type="text"><br>
+
+                    <input type="radio" id="directo-otros" name="acceso" value="Otros">
+                    <label for="directo-otros">Otros (especifique)</label>
+                    <input type="text"><br>
+
+                    <input type="radio" id="prueba-libre" name="acceso" value="Prueba Libre">
+                    <label for="prueba-libre">Prueba Libre</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Documentos Adjuntados -->
+        <div class="seccion documentos-adjuntados">
+            <span class="titulo">Documentos Adjuntados</span>
+            <div class="campo">
+                <input type="checkbox" id="fotocopia-dni">
+                <label for="fotocopia-dni">Fotocopia DNI</label>
+            </div>
+            <div class="campo">
+                <input type="checkbox" id="certificado-academico">
+                <label for="certificado-academico">Certificado Académico</label>
+            </div>
+            <div class="campo">
+                <input type="checkbox" id="otros-documentos">
+                <label for="otros-documentos">Otros documentos (especifique)</label>
+                <input type="text">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
